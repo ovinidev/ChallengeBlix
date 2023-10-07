@@ -15,7 +15,7 @@ export const Navigation = () => {
   return (
     <NavigationContainer>
       <Navigator
-        initialRouteName="Register"
+        initialRouteName="Login"
         screenOptions={{
           headerShown: false,
         }}
