@@ -1,6 +1,8 @@
 import { NavigationProps } from "../navigation";
 import { NavigationProp } from "@react-navigation/native";
-import { Text, View } from "react-native";
+import { View } from "react-native";
+import { auth } from "../../firebaseConfig";
+import { Button } from "../components/Button";
 
 type Props = {
   navigation: NavigationProp<NavigationProps>;
@@ -9,7 +11,19 @@ type Props = {
 export function Home({ navigation }: Props) {
   return (
     <View>
-      <Text onPress={() => navigation.navigate("Login")}>Home</Text>
+      <Button
+        title="Logout"
+        onPress={() => {
+          auth.signOut();
+          navigation.navigate("Login");
+        }}
+      />
+      <Button
+        title="Logout"
+        onPress={() => {
+          navigation.navigate("Register");
+        }}
+      />
     </View>
   );
 }

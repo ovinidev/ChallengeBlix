@@ -7,6 +7,7 @@ import { Form } from "../components/Form";
 import { useState } from "react";
 import { createUser } from "../api/users";
 import Toast from "react-native-toast-message";
+import { register } from "../api/auth";
 
 type Props = {
   navigation: NavigationProp<NavigationProps>;
@@ -19,19 +20,28 @@ export function Register({ navigation }: Props) {
   const [password, setPassword] = useState("");
 
   const handleRegister = async () => {
-    if (name && phone && email && password) {
-      await createUser({
-        name,
-        email,
-        phone,
-        password,
+    if (!name || !phone || !email || !password) {
+      Toast.show({
+        type: "error",
+        text1: "Preencha todos os campos",
       });
+
+      return;
     }
 
-    Toast.show({
-      type: "error",
-      text1: "Preencha todos os campos",
+    await createUser({
+      name,
+      email,
+      phone,
+      password,
     });
+
+    await register({
+      email,
+      password,
+    });
+
+    navigation.navigate("Login");
   };
 
   return (

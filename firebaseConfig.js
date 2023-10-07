@@ -1,6 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
 
+// TODO: Colocar credenciais em .env para aumentar segurança
 const firebaseConfig = {
   apiKey: "AIzaSyDAjbun6sqDrXnLKIdcMGDhc_GF1qh5a0I",
   authDomain: "challenge-blix-rn.firebaseapp.com",
@@ -12,4 +14,6 @@ const firebaseConfig = {
 };
 
 export const firebase = initializeApp(firebaseConfig);
+
 export const database = getFirestore(firebase);
+export const auth = getAuth(firebase);
