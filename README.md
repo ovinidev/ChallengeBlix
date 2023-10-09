@@ -18,6 +18,7 @@ Tecnologias utilizada no projeto:
 &nbsp;
 
 - React.js: Biblioteca JavaScript para a criação de interfaces de usuário.
+- Expo: Um conjunto de ferramentas e serviços construídos em torno de plataformas nativas e React Native que ajudam você a desenvolver, construir, implantar e iterar rapidamente em aplicativos iOS, Android e web a partir da mesma base de código JavaScript/TypeScript.
 - TypeScript: Linguagem de programação para adicionar tipos estáticos ao
   JavaScript.
 - Firebase: Um conjunto de serviços de computação em nuvem de back-end e plataformas de desenvolvimento de aplicativos fornecidos pelo Google.
