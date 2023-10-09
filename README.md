@@ -8,6 +8,8 @@ Tecnologias utilizada no projeto:
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/640px-React-icon.svg.png" width="63">&nbsp;
 &nbsp;
+<img src="https://static.expo.dev/static/brand/square-512x512.png" width="63">&nbsp;
+&nbsp;
 <img src="https://cdn.iconscout.com/icon/free/png-512/typescript-1174965.png" alt="imagem" width="60">&nbsp;
 &nbsp;
 <img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/firebase_logo_icon_171157.png" alt="imagem" width="60">&nbsp;
