@@ -30,6 +30,8 @@ Tecnologias utilizada no projeto:
 - Clone o repositório
 - Instale as dependências com `yarn`
 - Inicie o expo go com `yarn start`
+- Login: vini@gmail.com
+- Senha: 111111
 
 ## 👨‍💻 Funcionalidades
 
