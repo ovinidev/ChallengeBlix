@@ -2,8 +2,8 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
 } from "firebase/auth";
-import { auth } from "../../firebaseConfig";
 import Toast from "react-native-toast-message";
+import { auth } from "../services/firebase";
 
 interface LoginProps {
   email: string;

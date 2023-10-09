@@ -1,13 +1,14 @@
 import { NavigationProp } from "@react-navigation/native";
 import { StyleSheet, View } from "react-native";
-import { Button } from "../components/Button";
-import { NavigationProps } from "../navigation";
-import { Input } from "../components/Input";
-import { Form } from "../components/Form";
+import { Button } from "../../components/Button";
+import { NavigationProps } from "../../navigation";
+import { Input } from "../../components/Input";
+import { Form } from "../../components/Form";
 import { useState } from "react";
-import { createUser } from "../api/users";
+import { createUser } from "../../api/users";
 import Toast from "react-native-toast-message";
-import { register } from "../api/auth";
+import { register } from "../../api/auth";
+import { styles } from "./styles";
 
 type Props = {
   navigation: NavigationProp<NavigationProps>;
@@ -64,13 +65,3 @@ export function Register({ navigation }: Props) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    height: "100%",
-    backgroundColor: "#020617",
-    alignItems: "center",
-    justifyContent: "center",
-    paddingHorizontal: 25,
-  },
-});

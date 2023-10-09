@@ -1,12 +1,13 @@
 import { NavigationProp } from "@react-navigation/native";
-import { StyleSheet, Text, View } from "react-native";
-import { Button } from "../components/Button";
-import { NavigationProps } from "../navigation";
-import { Input } from "../components/Input";
-import { Form } from "../components/Form";
+import { Text, View } from "react-native";
+import { Button } from "../../components/Button";
+import { NavigationProps } from "../../navigation";
+import { Input } from "../../components/Input";
+import { Form } from "../../components/Form";
 import { useState } from "react";
 import Toast from "react-native-toast-message";
-import { login } from "../api/auth";
+import { login } from "../../api/auth";
+import { styles } from "./styles";
 
 type Props = {
   navigation: NavigationProp<NavigationProps>;
@@ -55,25 +56,3 @@ export function Login({ navigation }: Props) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    height: "100%",
-    backgroundColor: "#020617",
-    alignItems: "center",
-    justifyContent: "center",
-    paddingHorizontal: 25,
-  },
-  text: {
-    color: "#f1f5f9",
-    textAlign: "center",
-    fontSize: 18,
-  },
-  createAccount: {
-    color: "#ddd6fe",
-    textAlign: "center",
-    fontSize: 20,
-    fontWeight: "600",
-    cursor: "pointer",
-  },
-});

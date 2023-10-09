@@ -1,12 +1,11 @@
-import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Home } from "../screens/Home";
 import { Login } from "../screens/Login";
 import { Register } from "../screens/Register";
 import { useEffect, useState } from "react";
-import { auth } from "../../firebaseConfig";
 import { onAuthStateChanged } from "firebase/auth";
 import { Loading } from "../screens/Loading";
+import { auth } from "../services/firebase";
 
 export type NavigationProps = {
   Home: any;
@@ -31,46 +30,39 @@ export const Navigation = () => {
 
   if (isLoading) {
     return (
-      <NavigationContainer>
-        <Navigator
-          initialRouteName="Loading"
-          screenOptions={{
-            headerShown: false,
-          }}
-        >
-          <Screen name="Loading" component={Loading} />
-        </Navigator>
-      </NavigationContainer>
+      <Navigator
+        initialRouteName="Loading"
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <Screen name="Loading" component={Loading} />
+      </Navigator>
     );
   }
 
   if (user) {
     return (
-      <NavigationContainer>
-        <Navigator
-          initialRouteName="Home"
-          screenOptions={{
-            headerShown: false,
-          }}
-        >
-          <Screen name="Home" component={Home} />
-          <Screen name="Register" component={Register} />
-        </Navigator>
-      </NavigationContainer>
-    );
-  }
-
-  return (
-    <NavigationContainer>
       <Navigator
-        initialRouteName="Login"
+        initialRouteName="Home"
         screenOptions={{
           headerShown: false,
         }}
       >
-        <Screen name="Register" component={Register} />
-        <Screen name="Login" component={Login} />
+        <Screen name="Home" component={Home} />
       </Navigator>
-    </NavigationContainer>
+    );
+  }
+
+  return (
+    <Navigator
+      initialRouteName="Login"
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Screen name="Login" component={Login} />
+      <Screen name="Register" component={Register} />
+    </Navigator>
   );
 };
